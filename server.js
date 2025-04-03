@@ -39,6 +39,8 @@ app.get(`/booking`, (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
+  console.log(`Check /booking to view booking confirmation.`);
+  console.log(`Check /api/reservation to view reservation message.`);
 });
 
 
