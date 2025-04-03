@@ -4,7 +4,7 @@ const app = express();
 
 const PORT = 3000;
 
-// Checks if user is a member at the club.
+// Checks if user is a member at the club. (Set to false to simulate if user is not a member.)
 app.use((req, res, next) => {
   const userAuthenticated = true;
   if (!userAuthenticated) {
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Returns a message to say that the table is not available.
+// Returns a message to say that the table is not available. (Set to false to simulate that table is unavailable.)
 app.use((req, res, next) => {
   const tableAvailable = true;
   if (!tableAvailable) {
@@ -50,6 +50,8 @@ router.use((req, res, next) => {
     console.log("Router-level middleware for /reservation")
     next();
 });
+
+// An extension which would allow a user to check on and to edit their reservation.
 
 router.get("/reservation", (req, res) => {
     res.send("Here is your reservation.");
